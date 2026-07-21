@@ -1,25 +1,240 @@
-* {
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
-body {
+body{
     overflow:hidden;
-    background:black;
-    font-family:Arial;
+    background:#111;
 }
 
-canvas {
+canvas{
     display:block;
 }
 
-#hud {
+/* ===========================
+   START SCREEN
+=========================== */
+
+#startScreen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(#1d1d1d,#000);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:100;
+}
+
+#startScreen h1{
+    color:white;
+    font-size:60px;
+    margin-bottom:40px;
+    text-shadow:0 0 20px cyan;
+}
+
+#startScreen button{
+    width:260px;
+    padding:18px;
+    margin:10px;
+    border:none;
+    border-radius:15px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+    background:#00c853;
+    color:white;
+}
+
+#startScreen button:hover{
+    transform:scale(1.08);
+    background:#00e676;
+}
+
+/* ===========================
+   HUD
+=========================== */
+
+#hud{
+    position:absolute;
+    top:10px;
+    left:10px;
+    display:none;
+    gap:10px;
+    flex-wrap:wrap;
+    z-index:20;
+}
+
+.box{
+    background:rgba(0,0,0,.6);
+    color:white;
+    padding:10px 16px;
+    border-radius:12px;
+    border:2px solid white;
+    min-width:110px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.box span{
+    color:#00ff66;
+}
+
+/* ===========================
+   PAUSE BUTTON
+=========================== */
+
+#pauseBtn{
     position:absolute;
     top:20px;
-    left:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    font-size:24px;
+    background:#ff9800;
     color:white;
-    font-size:25px;
-    z-index:5;
-    text-shadow:2px 2px 5px black;
+    cursor:pointer;
+    display:none;
+    z-index:20;
+}
+
+/* ===========================
+   GAME OVER
+=========================== */
+
+#gameOver{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:rgba(0,0,0,.85);
+    z-index:50;
+}
+
+#gameOver h1{
+    color:red;
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+#gameOver h2{
+    color:white;
+    margin-bottom:30px;
+}
+
+#gameOver button{
+    width:240px;
+    padding:16px;
+    margin:10px;
+    border:none;
+    border-radius:12px;
+    font-size:22px;
+    cursor:pointer;
+    background:#00c853;
+    color:white;
+}
+
+#gameOver button:hover{
+    background:#00e676;
+}
+
+/* ===========================
+   MOBILE CONTROLS
+=========================== */
+
+#mobileControls{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    display:none;
+    justify-content:space-evenly;
+    z-index:20;
+}
+
+#mobileControls button{
+    width:75px;
+    height:75px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+    color:white;
+    font-size:22px;
+    backdrop-filter:blur(5px);
+}
+
+#nitroBtn{
+    background:#ff1744;
+}
+
+#brakeBtn{
+    background:#ff9100;
+}
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+#loadingScreen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index:200;
+}
+
+#loadingBar{
+    width:320px;
+    height:24px;
+    background:#333;
+    margin-top:20px;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+#loadingProgress{
+    width:0%;
+    height:100%;
+    background:#00e676;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+#startScreen h1{
+    font-size:36px;
+}
+
+#startScreen button{
+    width:220px;
+}
+
+.box{
+    font-size:14px;
+}
+
+#mobileControls{
+    display:flex;
+}
+
 }
