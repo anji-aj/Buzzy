@@ -1,21 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Buzzy Bike Racing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Traffic Racing Bike</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="hud">
-    Score: <span id="score">0</span>
-    <br>
-    Speed: <span id="speed">0</span>
-</div>
+    <!-- Start Screen -->
+    <div id="startScreen">
 
-<canvas id="game"></canvas>
+        <h1>🏍 TRAFFIC RACING BIKE</h1>
 
-<script src="script.js"></script>
+        <button id="playBtn">
+            PLAY
+        </button>
+
+        <button id="garageBtn">
+            GARAGE
+        </button>
+
+        <button id="settingsBtn">
+            SETTINGS
+        </button>
+
+        <button id="highScoreBtn">
+            HIGH SCORE
+        </button>
+
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+
+        <div class="box">
+            Speed
+            <span id="speed">0</span> km/h
+        </div>
+
+        <div class="box">
+            Score
+            <span id="score">0</span>
+        </div>
+
+        <div class="box">
+            Coins
+            <span id="coins">0</span>
+        </div>
+
+        <div class="box">
+            Distance
+            <span id="distance">0</span> m
+        </div>
+
+    </div>
+
+    <!-- Pause Button -->
+    <button id="pauseBtn">
+        ⏸
+    </button>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Game Over -->
+    <div id="gameOver">
+
+        <h1>GAME OVER</h1>
+
+        <h2>
+            Score :
+            <span id="finalScore">0</span>
+        </h2>
+
+        <button id="restartBtn">
+            Restart
+        </button>
+
+        <button id="menuBtn">
+            Main Menu
+        </button>
+
+    </div>
+
+    <!-- Mobile Controls -->
+    <div id="mobileControls">
+
+        <button id="leftBtn">
+            ◀
+        </button>
+
+        <button id="brakeBtn">
+            Brake
+        </button>
+
+        <button id="nitroBtn">
+            Nitro
+        </button>
+
+        <button id="rightBtn">
+            ▶
+        </button>
+
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+
+        <h2>Loading...</h2>
+
+        <div id="loadingBar">
+
+            <div id="loadingProgress"></div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
